@@ -2,13 +2,18 @@ import PropTypes from 'prop-types';
 import { Item, Title, Value } from './StatItem.styled';
 
 const StatItem = ({ name, value }) => {
-  console.log(name, value);
   return (
     <Item>
       <Title>{name.charAt(0).toUpperCase() + name.slice(1)}:</Title>
-      <Value name={name} value={value}>
-        {value ? value : '-'}
-      </Value>
+      {name === 'positive feedback' ? (
+        <Value name={name} value={value}>
+          {value ? `${value.toFixed(0)}%` : '-'}
+        </Value>
+      ) : (
+        <Value name={name} value={value}>
+          {value ? value : '-'}
+        </Value>
+      )}
     </Item>
   );
 };

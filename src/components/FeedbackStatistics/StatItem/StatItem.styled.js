@@ -32,6 +32,6 @@ export const Value= styled.span`
         ? p.theme.colors.lightGreen
         : p.name === 'bad'
         ? p.theme.colors.red
-        : p.theme.colors.accent};
+        : 'none'};
   }
 `;

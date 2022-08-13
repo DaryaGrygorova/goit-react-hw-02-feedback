@@ -19,6 +19,8 @@ FeedbackStatistics.propTypes = {
     good: PropTypes.number.isRequired,
     neutral: PropTypes.number.isRequired,
     bad: PropTypes.number.isRequired,
+    countTotal: PropTypes.number.isRequired,
+    countPositive: PropTypes.number.isRequired,
   }).isRequired,
 }.isRequired;
 
