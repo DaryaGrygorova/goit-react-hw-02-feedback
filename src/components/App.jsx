@@ -1,7 +1,7 @@
 import { GlobalStyle } from './GlobalStyle';
 import { Box } from './Box';
 import { Component } from 'react';
-import Section from './Section/Section';
+import Section from './Section';
 import Notification from './Notification';
 import FeedbackOptions from './FeedbackOptions';
 import Statistics from './Statistics';
