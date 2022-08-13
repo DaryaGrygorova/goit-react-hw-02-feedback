@@ -1,8 +1,10 @@
 import { GlobalStyle } from './GlobalStyle';
 import { Box } from './Box';
 import { Component } from 'react';
-import FeedbackForm from './FeedbackForm';
-import FeedbackStatistics from './FeedbackStatistics';
+import Section from './Section/Section';
+import Notification from './Notification';
+import FeedbackOptions from './FeedbackOptions';
+import Statistics from './Statistics';
 
 export class App extends Component {
   state = {
@@ -20,35 +22,42 @@ export class App extends Component {
       acc += +this.state[el];
       return acc;
     }, 0);
-    return { total: countTotal };
+    return countTotal;
   };
 
   countPositiveFeedbackPercentage = () => {
-    const countTotal = this.countTotalFeedback().total;
+    const countTotal = this.countTotalFeedback();
     const countPositive = (this.state.good / countTotal) * 100;
     if (countPositive) {
-      return { 'positive feedback': countPositive };
+      return countPositive;
     } else {
-      return { 'positive feedback': 0 };
+      return 0;
     }
   };
 
   render() {
     return (
       <Box>
-        <FeedbackForm
-          items={Object.keys(this.state)}
-          onButtonHandler={this.onButtonHandler}
-        />
-        <FeedbackStatistics
-          value={{
-            ...this.state,
-            ...this.countTotalFeedback(),
-            ...this.countPositiveFeedbackPercentage(),
-          }}
-          // countTotal={this.countTotalFeedback()}
-          // countPositive={this.countPositiveFeedbackPercentage()}
-        />
+        <Section title="Please leave feedback">
+          <FeedbackOptions
+            items={Object.keys(this.state)}
+            onButtonHandler={this.onButtonHandler}
+          />
+        </Section>
+
+        <Section title="Statistics">
+          {!this.countTotalFeedback() ? (
+            <Notification message="There is no feedback" />
+          ) : (
+            <Statistics
+              value={{
+                ...this.state,
+                total: this.countTotalFeedback(),
+                positivePercentage: this.countPositiveFeedbackPercentage(),
+              }}
+            />
+          )}
+        </Section>
 
         <GlobalStyle />
       </Box>

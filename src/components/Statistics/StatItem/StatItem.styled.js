@@ -22,7 +22,7 @@ export const Value= styled.span`
     top: 0;
     left: 0;
     z-index: -1;
-    width: ${p => p.value * 2}px;
+    width: ${p => (p.value/p.totalCount )* 100}vw;
     max-width: 85vw;
     height: 25px;
     background-color: ${p =>
