@@ -6,8 +6,12 @@ export const theme = {
     background: '#fff',
     primary: '#07c',
     secondary: '#05a',
-    accent: '#609',
+    accent: '#6F0FEB',
     muted: '#f6f6f6',
+    green: '#14ee14',
+    red: '#ea3a3a',
+    lightGreen: '#a2dba2',
+
   },
   space: [0, 2, 4, 8, 16, 32, 64, 128, 256],
   fonts: {
