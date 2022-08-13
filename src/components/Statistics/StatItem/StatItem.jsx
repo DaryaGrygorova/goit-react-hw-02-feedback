@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types';
 import { Box } from '../../Box';
-
 import { Item, Title, Value } from './StatItem.styled';
 
 const StatItem = ({ name, value, totalCount }) => {

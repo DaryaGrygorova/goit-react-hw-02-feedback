@@ -1,9 +1,10 @@
 import PropTypes from 'prop-types';
+import { Box } from '../Box';
 import StatItem from './StatItem';
 
 const Statistics = ({ value }) => {
   return (
-    <>
+    <Box width="600px" margin="0 auto">
       {Object.keys(value).map((name, index) => (
         <StatItem
           key={index}
@@ -12,7 +13,7 @@ const Statistics = ({ value }) => {
           totalCount={value.total}
         />
       ))}
-    </>
+    </Box>
   );
 };
 
