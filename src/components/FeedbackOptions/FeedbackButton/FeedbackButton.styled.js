@@ -9,5 +9,7 @@ border-radius: ${p => p.theme.radii.lg};
 
 :hover, :focus {
     background-color: ${p => p.theme.colors.primary};
-}
+    color: ${p => p.theme.colors.white};
+    border-color: ${p => p.theme.colors.white};
+    };
 `; 
