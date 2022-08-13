@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Title = styled.span`
 display: inline-block;
   margin-bottom: ${p => p.theme.space[4]}px;
-  min-width: 90px;
+  min-width: 60px;
 `;
 export const Item = styled.p`
   margin-bottom: ${p => p.theme.space[3]}px;
@@ -24,7 +24,7 @@ export const Value= styled.span`
     z-index: -1;
     width: ${p => (p.value/p.totalCount )* 100}vw;
     max-width: 85vw;
-    height: 25px;
+    height: 1.1em;
     background-color: ${p =>
       p.name === 'good'
         ? p.theme.colors.green

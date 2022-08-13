@@ -1,22 +1,22 @@
 import PropTypes from 'prop-types';
 import { StyledButton } from './FeedbackButton.styled';
 
-const Button = ({ name, onClickHandler }) => {
+const Button = ({ option, onClickHandler }) => {
   return (
     <StyledButton
       type="button"
-      name={name}
+      name={option}
       onClick={event => {
         onClickHandler(event.currentTarget.name);
       }}
     >
-      {name.charAt(0).toUpperCase() + name.slice(1)}
+      {option.charAt(0).toUpperCase() + option.slice(1)}
     </StyledButton>
   );
 };
 
 Button.propTypes = {
-  name: PropTypes.string.isRequired,
+  option: PropTypes.string.isRequired,
   onClickHandler: PropTypes.func.isRequired,
 };
 

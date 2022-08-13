@@ -13,8 +13,8 @@ export class App extends Component {
     bad: 0,
   };
 
-  onButtonHandler = name => {
-    this.setState(prevState => ({ [name]: prevState[name] + 1 }));
+  onButtonHandler = option => {
+    this.setState(prevState => ({ [option]: prevState[option] + 1 }));
   };
 
   countTotalFeedback = () => {
@@ -40,7 +40,7 @@ export class App extends Component {
       <Box>
         <Section title="Please leave feedback">
           <FeedbackOptions
-            items={Object.keys(this.state)}
+            options={Object.keys(this.state)}
             onButtonHandler={this.onButtonHandler}
           />
         </Section>
